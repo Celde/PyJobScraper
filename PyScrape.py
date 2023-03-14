@@ -29,13 +29,14 @@ for job_element in python_job_elements:
 #    for link in links:
     link = links[1]
     link_url = link["href"]
-    print(f"Apply here: {link_url}\n")
+
 
 #    print(job_element, end="\n" * 2)
 #    print(title_element)
     print(title_element.text.strip())  # soup object, prints string and then uses strip method on string obj
     print(company_element.text.strip())
     print(location_element.text.strip())
+    print(f"Apply here: {link_url}\n")
     print()
 
 
