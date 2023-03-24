@@ -14,7 +14,7 @@ results = soup.find(id="search-results-list")
 job_elements = results.find_all("li")
 
 # print(job_elements)
-
+'''
 for job_element in job_elements:
     title_element = job_element.find("h2")
     company_element = job_element.find(class_="job-location")
@@ -25,6 +25,27 @@ for job_element in job_elements:
     print(company_element.text.strip())
     print(date_element.text.strip())
     print(f"apply here: {link_element}\n")
+'''
+
+#for link in soup.find_all("a"):
+#    print(link.get('href'))
+
+
+navigation_buttons = soup.find(id="pagination-bottom") # ["href"]
+buttons = navigation_buttons.find_all("a")
+#for button in buttons:
+#    print(button.get('href'))
+# because we are interested in the 'second' link, which moves us to the next page, we can consistently use the
+# index of the second link [1]
+
+next_button = buttons[1]
+next_button_url = next_button["href"]
+print(next_button_url)
+
+
+#    print(type(button), button)
+#print(buttons)
+
 
 #    print()
 #    print(job_element, end="\n"*2)
